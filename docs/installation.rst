@@ -115,7 +115,7 @@ Running a Singularity Image
 
 If the data to be preprocessed is also on the HPC, you are ready to run fmriprep. ::
 
-    $ singularity run --clearenv /my_images/fmriprep-1.1.2.simg \
+    $ singularity run --cleanenv /my_images/fmriprep-1.1.2.simg \
         path/to/data/dir path/to/output/dir \
         participant \
         --participant-label label
@@ -129,7 +129,7 @@ If the data to be preprocessed is also on the HPC, you are ready to run fmriprep
    To avoid such situation we recommend using the ``--clearenv`` singularity flag 
    in production use. For example: ::
 
-      $ singularity run --clearenv ~/poldracklab_fmriprep_latest-2016-12-04-5b74ad9a4c4d.img \
+      $ singularity run --cleanenv ~/poldracklab_fmriprep_latest-2016-12-04-5b74ad9a4c4d.img \
         /work/04168/asdf/lonestar/ $WORK/lonestar/output \
         participant \
         --participant-label 387 --nthreads 16 -w $WORK/lonestar/work \
@@ -153,7 +153,7 @@ If the data to be preprocessed is also on the HPC, you are ready to run fmriprep
    the ``-B <host_folder>:<container_folder>`` Singularity argument.
    For example: ::
 
-      $ singularity run --clearenv -B /work:/work ~/poldracklab_fmriprep_latest-2016-12-04-5b74ad9a4c4d.simg \
+      $ singularity run --cleanenv -B /work:/work ~/poldracklab_fmriprep_latest-2016-12-04-5b74ad9a4c4d.simg \
         /work/my_dataset/ /work/my_dataset/derivatives/fmriprep \
         participant \
         --participant-label 387 --nthreads 16 \
